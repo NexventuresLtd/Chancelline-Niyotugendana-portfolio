@@ -174,7 +174,7 @@ export const Footer = ({ isDarkMode, setActiveSection }: renderProps) => {
                             Designed and built with{' '}
                             <a 
                                 href="https://www.nexventures.net/" 
-                                className="text-slate-500 hover:text-slate-600 font-medium transition-colors duration-300"
+                                className="text-transparent font-medium transition-colors duration-300"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
