@@ -46,7 +46,7 @@ export const RenderNavigation = ({ isDarkMode, setActiveSection, setIsMenuOpen, 
                                     <span className="max-lg:hidden">
                                         Niyotugendana chancelline
                                     </span>
-                                    <span className="lg:block">NC</span>
+                                    <span className="block lg:hidden">NC</span>
                                 </h1>
                                 <p className={`text-xs ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
                                     Child Advocate & Social Entrepreneur
