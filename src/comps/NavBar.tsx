@@ -70,7 +70,7 @@ export const RenderNavigation = ({ isDarkMode, setActiveSection, setIsMenuOpen, 
                                             <motion.button
                                                 onClick={() => {
                                                     if (item.id === "resume") {
-                                                        window.open("https://docs.google.com/document/d/16DcQPH2rIc6tPLzJlOQpmrpoyf8Ph1Dkt-LF7yShIRc/edit?tab=t.0", "_blank");
+                                                        window.open("https://docs.google.com/document/d/1QuGES7yA19ecOBzY-9ZmQ4PMpzEHXgVBTQ1TGerS-w8/edit?tab=t.0", "_blank");
                                                     } else {
                                                         setActiveSection(item.id);
                                                     }
