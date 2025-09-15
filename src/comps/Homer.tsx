@@ -66,7 +66,7 @@ export const RenderHome = ({ isDarkMode, setActiveSection }: renderProps) => {
                                 <span className="text-sm font-medium">Empowering Children's Futures</span>
                             </div>
                             
-                            <h1 className={`text-5xl lg:text-6xl font-bold mb-6 leading-tight ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
+                            <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
                                 <span className="block">Niyotugendana</span>
                                 <span className={`${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
                                     Chancelline
