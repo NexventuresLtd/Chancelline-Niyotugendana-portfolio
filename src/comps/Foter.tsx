@@ -53,7 +53,7 @@ export const Footer = ({ isDarkMode, setActiveSection }: renderProps) => {
                         {/* Social Links */}
                         <div className="flex space-x-4 mb-8">
                             <a
-                                href="linkedin.com/in/chancelline-niyotugendana-7430512a4"
+                                href="https://www.linkedin.com/in/chancelline-niyotugendana-7430512a4"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={`group relative p-4 ${isDarkMode ? 'bg-gray-900 hover:bg-slate-500' : 'bg-white hover:bg-slate-500'} rounded-xl transition-all duration-300  hover:shadow-xl hover:scale-105`}
@@ -122,7 +122,7 @@ export const Footer = ({ isDarkMode, setActiveSection }: renderProps) => {
                             Get In Touch
                         </h4>
                         <div className="space-y-4">
-                            <div className={`flex items-start p-4 rounded-xl ${isDarkMode ? 'bg-gray-900' : 'bg-white'} `}>
+                            <div className={`flex items-start p-4 rounded-xl ${isDarkMode ? '' : 'bg-white'} `}>
                                 <Mail className="w-5 h-5 mr-3 mt-1 flex-shrink-0 text-slate-500" />
                                 <div>
                                     <p className={`text-sm font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'} mb-1`}>Email</p>
@@ -135,12 +135,12 @@ export const Footer = ({ isDarkMode, setActiveSection }: renderProps) => {
                                 </div>
                             </div>
                             
-                            <div className={`flex items-start p-4 rounded-xl ${isDarkMode ? 'bg-gray-900' : 'bg-white'} `}>
+                            <div className={`flex items-start p-4 rounded-xl ${isDarkMode ? '' : 'bg-white'} `}>
                                 <Linkedin className="w-5 h-5 mr-3 mt-1 flex-shrink-0 text-slate-500" />
                                 <div>
                                     <p className={`text-sm font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'} mb-1`}>LinkedIn</p>
                                     <a
-                                        href="linkedin.com/in/chancelline-niyotugendana-7430512a4"
+                                        href="https://www.linkedin.com/in/chancelline-niyotugendana-7430512a4"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className={`${isDarkMode ? 'text-white hover:text-slate-400' : 'text-gray-900 hover:text-slate-600'} transition-colors duration-300 font-medium`}
@@ -150,7 +150,7 @@ export const Footer = ({ isDarkMode, setActiveSection }: renderProps) => {
                                 </div>
                             </div>
 
-                            <div className={`flex items-start p-4 rounded-xl ${isDarkMode ? 'bg-gray-900' : 'bg-white'} `}>
+                            <div className={`flex items-start p-4 rounded-xl ${isDarkMode ? '' : 'bg-white'} `}>
                                 <MapPin className="w-5 h-5 mr-3 mt-1 flex-shrink-0 text-slate-500" />
                                 <div>
                                     <p className={`text-sm font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'} mb-1`}>Location</p>
@@ -186,7 +186,7 @@ export const Footer = ({ isDarkMode, setActiveSection }: renderProps) => {
                     {/* Back to Top Button */}
                     <button
                         onClick={scrollToTop}
-                        className={`group flex items-center gap-2 px-6 py-3 rounded-full ${isDarkMode ? 'bg-gray-900 hover:bg-slate-500' : 'bg-white hover:bg-slate-500'} text-slate-500 hover:text-white transition-all duration-300  hover:shadow-xl hover:scale-105`}
+                        className={`group flex items-center gap-2 px-6 py-3 rounded-full ${isDarkMode ? ' hover:bg-slate-500' : 'bg-white hover:bg-slate-500'} text-slate-500 hover:text-white transition-all duration-300  hover:shadow-xl hover:scale-105`}
                     >
                         <ArrowUp className="w-5 h-5 transition-transform duration-300 group-hover:-translate-y-1" />
                         <span className="font-medium">Back to Top</span>
