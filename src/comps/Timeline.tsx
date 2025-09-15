@@ -1,192 +1,194 @@
-import { Award, Lightbulb, Target, TrendingUp, Users } from "lucide-react";
-import { useEffect, useRef } from "react";
-import { motion, useInView, useAnimation, type Variants } from "framer-motion";
+import { Award, Truck, Camera, Heart, Megaphone, Calendar, MapPin } from "lucide-react";
+import { useState } from "react";
 
 interface Timeline {
     isDarkMode: boolean;
 }
 
 export const RenderTimeline = ({ isDarkMode }: Timeline) => {
-    const timelineRef = useRef<HTMLDivElement>(null);
-    const isInView = useInView(timelineRef, { once: true, amount: 0.1 });
-    const controls = useAnimation();
+    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
     const timelineEvents = [
         {
-            year: "2019",
-            title: "Founded First Social Enterprise",
-            description: "Launched a social enterprise focused on providing digital literacy training to underserved communities.",
-            icon: Lightbulb,
-            achievement: "Served 500+ community members"
-        },
-        {
-            year: "2020",
-            title: "Leadership Development Program",
-            description: "Completed intensive leadership certification and began mentoring young entrepreneurs.",
-            icon: Award,
-            achievement: "Mentored 25+ entrepreneurs"
-        },
-        {
-            year: "2021",
-            title: "Strategic Partnership Initiative",
-            description: "Established partnerships with 3 major organizations to expand community impact.",
-            icon: Users,
-            achievement: "3x program reach expansion"
-        },
-        {
             year: "2023",
-            title: "Innovation Lab Launch",
-            description: "Created an innovation lab to support tech startups in emerging markets.",
-            icon: Target,
-            achievement: "15 startups accelerated"
+            title: "Secretary, Accountant & Photographer – Flat Production",
+            description: "Managed logistical planning and delivery of visual content. Oversaw accounting tasks and studio operations.",
+            icon: Camera,
+            achievement: "Contributed to efficiency and client satisfaction"
         },
         {
             year: "2024",
-            title: "Regional Leadership Recognition",
-            description: "Received regional award for entrepreneurial leadership and community impact.",
-            icon: TrendingUp,
-            achievement: "Regional Excellence Award"
+            title: "Volunteer – ALU Financial Aid Team",
+            description: "Guided incoming students through services and resources to improve their campus experience.",
+            icon: Heart,
+            achievement: "Enhanced student support and coordination"
+        },
+        {
+            year: "2024",
+            title: "Volunteer – ALU Marketing Team",
+            description: "Produced and managed photography content to promote engagement and awareness.",
+            icon: Megaphone,
+            achievement: "Increased promotional content quality"
+        },
+        {
+            year: "2025",
+            title: "Logistics and Finance Intern – Rwanda Biomedical Center",
+            description: "Supported logistics operations including transport and stock movement. Assisted procurement processes.",
+            icon: Truck,
+            achievement: "Strengthened efficiency in supply tracking"
         }
     ];
 
-    useEffect(() => {
-        if (isInView) {
-            controls.start("visible");
-        }
-    }, [isInView, controls]);
-
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.2
-            }
-        }
-    };
-
-    const itemVariants: Variants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.6,
-                ease: "easeOut"
-            }
-        }
-    };
-
-    const hoverVariants: Variants = {
-        hover: {
-            y: -5,
-            transition: {
-                duration: 0.3,
-                ease: "easeOut"
-            }
-        }
-    };
-
-    const iconVariants: Variants = {
-        hover: {
-            scale: 1.1,
-            transition: {
-                duration: 0.3,
-                ease: "easeOut"
-            }
-        }
-    };
-
     return (
-        <div className={`min-h-screen py-16 px-4 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
-            <div className="max-w-6xl mx-auto w-full lg:max-w-11/12">
-                <div className="text-center mb-16">
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className={`text-4xl md:text-5xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}
-                    >
-                        Leadership Journey Timeline
-                    </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
-                        className={`text-lg ${isDarkMode ? 'text-gray-300' : 'text-gray-600'} max-w-3xl mx-auto`}
-                    >
-                        Key milestones and achievements in my entrepreneurial leadership journey.
-                    </motion.p>
+        <div className={`min-h-screen py-20 px-4 relative overflow-hidden ${isDarkMode ? 'bg-slate-900' : 'bg-slate-50'}`}>
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-5">
+                <div className="absolute inset-0" style={{
+                    backgroundImage: `radial-gradient(circle at 25% 25%, #64748b 0%, transparent 50%), 
+                                     radial-gradient(circle at 75% 75%, #475569 0%, transparent 50%)`
+                }}></div>
+            </div>
+
+            <div className="max-w-11/12 mx-auto relative z-10">
+                {/* Header Section */}
+                <div className="text-center mb-20">
+                    <div className="inline-flex items-center gap-3 mb-6">
+                        <div className={`w-12 h-0.5 ${isDarkMode ? 'bg-slate-400' : 'bg-slate-600'}`}></div>
+                        <Calendar className={`w-8 h-8 ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`} />
+                        <div className={`w-12 h-0.5 ${isDarkMode ? 'bg-slate-400' : 'bg-slate-600'}`}></div>
+                    </div>
+                    <h2 className={`text-5xl md:text-6xl font-black mb-6 tracking-tight ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
+                        Professional
+                        <span className={`block ${isDarkMode ? 'text-slate-300' : 'text-slate-700'}`}>
+                            Journey
+                        </span>
+                    </h2>
+                    <p className={`text-xl ${isDarkMode ? 'text-slate-300' : 'text-slate-600'} max-w-2xl mx-auto leading-relaxed`}>
+                        Key experiences and contributions that shaped my career development
+                    </p>
                 </div>
 
-                <div className="relative" ref={timelineRef}>
-                    {/* Timeline line */}
-                    <div className={`absolute left-4 md:left-1/2 top-0 bottom-0 w-1 transform -translate-x-1/2 md:translate-x-0 
-                        ${isDarkMode ? 'bg-gradient-to-b from-slate-500 to-slate-700' : 'bg-gradient-to-b from-slate-300 to-slate-500'}`}></div>
+                {/* Timeline Container */}
+                <div className="relative">
+                    {/* Central Line */}
+                    <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-slate-400 transform -translate-x-1/2 rounded-full"></div>
 
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        animate={controls}
-                        className="space-y-4"
-                    >
+                    {/* Timeline Items */}
+                    <div className="space-y-16 md:space-y-20">
                         {timelineEvents.map((event, index) => {
                             const Icon = event.icon;
+                            const isLeft = index % 2 !== 0;
+                            
                             return (
-                                <motion.div
-                                    key={index}
-                                    variants={itemVariants}
-                                    className="flex flex-col md:flex-row items-start relative"
+                                <div 
+                                    key={index} 
+                                    className={`relative flex items-center ${isLeft ? 'md:flex-row-reverse' : 'md:flex-row'}`}
+                                    onMouseEnter={() => setHoveredIndex(index)}
+                                    onMouseLeave={() => setHoveredIndex(null)}
                                 >
+                                    {/* Content Card */}
+                                    <div className={`w-full md:w-5/12 ${isLeft ? 'md:pr-16' : 'md:pl-16'}`}>
+                                        <div className={`
+                                            group relative p-8 rounded-2xl shadow-xl transition-all duration-500 border
+                                            ${isDarkMode 
+                                                ? 'bg-slate-800 border-slate-700 shadow-black/20' 
+                                                : 'bg-white border-slate-200 shadow-black/10'
+                                            }
+                                            ${hoveredIndex === index ? 'scale-105 shadow-2xl' : 'hover:scale-102'}
+                                        `}>
+                                            
+                                            {/* Year Badge */}
+                                            <div className={`absolute -top-4 ${isLeft ? 'left-8' : 'right-8'} z-20`}>
+                                                <div className={`
+                                                    px-6 py-2 rounded-full text-sm font-bold
+                                                    ${isDarkMode ? 'bg-slate-700 text-slate-300' : 'bg-slate-600 text-white'}
+                                                    shadow-lg transform transition-transform duration-300
+                                                    ${hoveredIndex === index ? 'scale-110' : ''}
+                                                `}>
+                                                    {event.year}
+                                                </div>
+                                            </div>
 
-                                    {/* Content card */}
-                                    <motion.div
-                                        variants={hoverVariants}
-                                        whileHover="hover"
-                                        className={`ml-0 md:ml-8 w-full md:w-5/12 ${index % 2 === 0 ? 'md:mr-auto md:ml-8' : 'md:ml-auto md:mr-8'} 
-                                        rounded-xl p-6
-                                        ${isDarkMode
-                                                ? 'bg-gradient-to-r from-gray-800 to-gray-700 text-white'
-                                                : 'bg-gradient-to-r from-white to-gray-50 text-gray-900'
-                                            }`}
-                                    >
-                                        {/* Timeline dot with animation */}
-                                        <motion.div
-                                            variants={iconVariants}
-                                            whileHover="hover"
-                                            className={`flex items-center justify-center w-12 h-12 ${isDarkMode ? 'bg-slate-600' : 'bg-slate-500'} 
-                                                    rounded-full z-10 relative mx-auto md:mx-0 mb-4 md:mb-0`}
-                                        >
-                                            <Icon className="w-6 h-6 text-white" />
-                                        </motion.div>
-                                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
-                                            <h3 className={`text-xl font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-                                                {event.title}
-                                            </h3>
-                                            <span className={`inline-block px-3 py-1 mt-2 sm:mt-0 text-sm font-medium rounded-full 
-                                                ${isDarkMode
-                                                    ? 'bg-slate-700 text-white'
-                                                    : 'bg-slate-100 text-slate-800'
-                                                }`}>
-                                                {event.year}
-                                            </span>
+                                            {/* Content */}
+                                            <div className="pt-4">
+                                                <h3 className={`text-2xl font-bold mb-4 leading-tight ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
+                                                    {event.title}
+                                                </h3>
+                                                <p className={`text-lg mb-6 leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
+                                                    {event.description}
+                                                </p>
+                                                
+                                                {/* Achievement Badge */}
+                                                <div className={`
+                                                    inline-flex items-center gap-3 px-4 py-3 rounded-xl
+                                                    ${isDarkMode 
+                                                        ? 'bg-slate-700 text-slate-200' 
+                                                        : 'bg-slate-100 text-slate-700'
+                                                    }
+                                                    transition-colors duration-300
+                                                `}>
+                                                    <Award className="w-5 h-5" />
+                                                    <span className="font-medium">{event.achievement}</span>
+                                                </div>
+                                            </div>
+
+                                            {/* Decorative Elements */}
+                                            <div className={`
+                                                absolute inset-0 rounded-2xl opacity-10 -z-10
+                                                ${isDarkMode ? 'bg-slate-600' : 'bg-slate-400'}
+                                                transition-opacity duration-500
+                                                ${hoveredIndex === index ? 'opacity-20' : ''}
+                                            `}></div>
                                         </div>
-                                        <p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-600'} mb-3 leading-relaxed`}>
-                                            {event.description}
-                                        </p>
-                                        <div className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium
-                                            ${isDarkMode
-                                                ? 'bg-gray-700 text-slate-300'
-                                                : 'bg-slate-50 text-slate-700'
-                                            }`}>
-                                            <Award className="w-4 h-4 mr-2" />
-                                            {event.achievement}
+                                    </div>
+
+                                    {/* Central Icon */}
+                                    <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 z-20">
+                                        <div className={`
+                                            relative w-20 h-20 rounded-full flex items-center justify-center
+                                            ${isDarkMode ? 'bg-slate-700' : 'bg-slate-600'}
+                                            shadow-xl transition-all duration-500
+                                            ${hoveredIndex === index ? 'scale-125 shadow-2xl' : 'hover:scale-110'}
+                                        `}>
+                                            <Icon className="w-10 h-10 text-white" />
+                                            
+                                            {/* Pulse Animation */}
+                                            <div className={`
+                                                absolute inset-0 rounded-full
+                                                ${isDarkMode ? 'bg-slate-600' : 'bg-slate-500'} opacity-20
+                                                ${hoveredIndex === index ? 'animate-ping' : ''}
+                                            `}></div>
                                         </div>
-                                    </motion.div>
-                                </motion.div>
+                                    </div>
+
+                                    {/* Mobile Icon */}
+                                    <div className="md:hidden mb-6">
+                                        <div className={`
+                                            w-16 h-16 rounded-full flex items-center justify-center mx-auto
+                                            ${isDarkMode ? 'bg-slate-700' : 'bg-slate-600'} shadow-lg
+                                        `}>
+                                            <Icon className="w-8 h-8 text-white" />
+                                        </div>
+                                    </div>
+
+                                    {/* Connection Line */}
+                                    <div className={`
+                                        hidden md:block absolute top-1/2 w-20 h-0.5
+                                        ${isDarkMode ? 'bg-slate-600' : 'bg-slate-400'} transform -translate-y-1/2
+                                        ${!isLeft ? 'right-1/2 mr-10' : 'left-1/2 ml-10'}
+                                    `}></div>
+                                </div>
                             );
                         })}
-                    </motion.div>
+                    </div>
+                </div>
+
+                {/* Footer */}
+                <div className="text-center mt-20">
+                    <div className={`inline-flex items-center gap-2 px-6 py-3 rounded-full ${isDarkMode ? 'bg-slate-800 text-slate-300' : 'bg-slate-200 text-slate-600'}`}>
+                        <MapPin className="w-5 h-5" />
+                        <span className="font-medium">Journey continues...</span>
+                    </div>
                 </div>
             </div>
         </div>

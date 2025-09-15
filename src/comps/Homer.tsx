@@ -1,4 +1,4 @@
-import { ArrowRight, Target, Users, Heart, Linkedin } from "lucide-react";
+import { ArrowRight, Heart, BookOpen, Stethoscope, Home, Mail } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
 
 interface renderProps {
@@ -7,14 +7,14 @@ interface renderProps {
 }
 
 export const RenderHome = ({ isDarkMode, setActiveSection }: renderProps) => {
-    // Animation variants
+    // Simplified animation variants
     const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.2,
-                delayChildren: 0.3
+                staggerChildren: 0.1,
+                delayChildren: 0.1
             }
         }
     };
@@ -31,173 +31,144 @@ export const RenderHome = ({ isDarkMode, setActiveSection }: renderProps) => {
         }
     };
 
-    const floatVariants: Variants = {
-        float: {
-            y: [-10, 10, -10],
-            transition: {
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut"
-            }
-        }
-    };
-
-    const pulseVariants: Variants = {
-        pulse: {
-            scale: [1, 1.05, 1],
-            opacity: [0.7, 1, 0.7],
-            transition: {
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut"
-            }
-        }
-    };
-
     return (
-        <div className={`min-h-screen relative overflow-hidden ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
-            {/* Animated floating elements */}
-            <motion.div
-                className="absolute top-20 left-10"
-                variants={floatVariants}
-                animate="float"
-            >
-                <div className={`w-4 h-4 rounded-full ${isDarkMode ? 'bg-slate-500/40' : 'bg-slate-400/30'}`}></div>
-            </motion.div>
+        <div className={`min-h-screen relative overflow-hidden ${isDarkMode ? 'bg-slate-900' : 'bg-slate-50'}`}>
+            {/* Subtle animated background */}
+            <motion.div 
+                className="absolute inset-0 opacity-20"
+                style={{
+                    background: isDarkMode 
+                        ? 'radial-gradient(circle at 30% 50%, #334155, transparent 50%)'
+                        : 'radial-gradient(circle at 70% 50%, #e2e8f0, transparent 50%)'
+                }}
+                animate={{
+                    scale: [1, 1.05, 1],
+                }}
+                transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                }}
+            />
 
-            <motion.div
-                className="absolute top-1/3 right-20"
-                variants={floatVariants}
-                animate="float"
-                transition={{ delay: 1 }}
-            >
-                <div className={`w-6 h-6 rounded-full ${isDarkMode ? 'bg-slate-500/30' : 'bg-slate-400/20'}`}></div>
-            </motion.div>
-
-            <motion.div
-                className="absolute bottom-40 left-1/4"
-                variants={floatVariants}
-                animate="float"
-                transition={{ delay: 2 }}
-            >
-                <div className={`w-3 h-3 rounded-full ${isDarkMode ? 'bg-slate-500/30' : 'bg-slate-400/20'}`}></div>
-            </motion.div>
-
-            <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+            <div className="relative z-10 max-w-11/12 mx-auto px-6 lg:px-8 py-16">
                 <motion.div
-                    className="text-center xl:flex lg:gap-8 items-center flex-row-reverse"
+                    className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]"
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
                 >
-                    {/* Profile image with elegant frame */}
-                    <motion.div
-                        className="mb-12 relative inline-block"
-                        variants={itemVariants}
-                    >
-                        <div className="relative h-132 w-132 mx-auto">
-                            <motion.div
-                                className={`absolute inset-0 rounded-full ${isDarkMode ? 'bg-slate-800' : 'bg-slate-500'}`}
-                                variants={pulseVariants}
-                                animate="pulse"
-                            />
-                            <div className="absolute inset-2 rounded-full overflow-hidden shadow-xl border-2 border-white dark:border-slate-600">
-                                <img
-                                    src="/logos/sheilla3.jpeg"
-                                    alt="niyotugendana chancelline - Professional Portrait"
-                                    className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-                                />
+                    {/* Content Section */}
+                    <div className="space-y-8">
+                        <motion.div variants={itemVariants}>
+                            <div className={`inline-flex items-center px-4 py-2 rounded-full mb-6 ${isDarkMode ? 'bg-slate-800 text-slate-300' : 'bg-slate-100 text-slate-800'}`}>
+                                <Heart className="w-4 h-4 mr-2" />
+                                <span className="text-sm font-medium">Empowering Children's Futures</span>
                             </div>
-                        </div>
-                    </motion.div>
-                    <div>
-
-
-                        {/* Name with elegant typography */}
-                        <motion.div
-                            className="mb-6"
-                            variants={itemVariants}
-                        >
-                            <h1 className={`text-4xl font-delius text-left md:text-5xl lg:text-6xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-                                niyotugendana chancelline
+                            
+                            <h1 className={`text-5xl lg:text-6xl font-bold mb-6 leading-tight ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
+                                <span className="block">Niyotugendana</span>
+                                <span className={`${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
+                                    Chancelline
+                                </span>
                             </h1>
-                            <div className={`w-32 h-1 ${isDarkMode ? 'bg-slate-600' : 'bg-slate-500'} rounded-full mb-4`}></div>
-                            <p className={`text-xl text-left md:text-2xl mb-8 font-medium ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
-                                Transformational Leader | Social Entrepreneur | Community Builder
+                            
+                            <p className={`text-xl lg:text-2xl font-medium mb-8 ${isDarkMode ? 'text-slate-300' : 'text-slate-700'}`}>
+                                Social Entrepreneur & Child Advocate
                             </p>
                         </motion.div>
 
-                        {/* Mission statement with elegant card */}
-                        <motion.div
-                            className={`max-w-5xl mx-auto mb-14 p-8 rounded-xl ${isDarkMode ? 'bg-gray-800' : 'bg-gray-50'} `}
+                        <motion.div 
+                            className={`relative p-6 rounded-xl ${isDarkMode ? 'bg-slate-800/80 text-slate-200' : 'bg-white text-slate-800'}`}
                             variants={itemVariants}
                         >
-                            <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} italic text-center`}>
-                                "Passionate about creating sustainable change through innovative leadership, community engagement, and strategic partnerships. With over 5 years of experience in social entrepreneurship and community development, I'm committed to building bridges between vision and impact."
+                            <h2 className="text-xl font-bold mb-4">My Mission</h2>
+                            <p className="leading-relaxed">
+                                Supporting abandoned children and their families by providing education, healthcare, basic needs, and loving care to underserved children in rural areas.
                             </p>
                         </motion.div>
 
-                        {/* Key strengths grid */}
-                        <motion.div
-                            className="grid md:grid-cols-3 gap-6 mb-14 max-w-4xl "
+                        {/* Impact Areas */}
+                        <motion.div 
+                            className="grid grid-cols-2 md:grid-cols-4 gap-3"
                             variants={itemVariants}
                         >
-                            <div className={`p-6 rounded-lg ${isDarkMode ? 'bg-gray-800' : 'bg-gray-50 '} cursor-pointer transition-all duration-300 hover:shadow-lg`}>
-                                <div className={`w-12 h-12 ${isDarkMode ? 'bg-slate-900' : 'bg-slate-100'} rounded-full flex items-center justify-center mb-4 mx-auto`}>
-                                    <Target className={`w-6 h-6 ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`} />
-                                </div>
-                                <h3 className={`font-semibold mb-2 ${isDarkMode ? 'text-slate-300' : 'text-slate-700'}`}>Strategic Vision</h3>
-                                <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>Transforming ideas into impactful initiatives</p>
-                            </div>
-
-                            <div className={`p-6 rounded-lg ${isDarkMode ? 'bg-gray-800' : 'bg-gray-50 '} cursor-pointer transition-all duration-300 hover:shadow-lg`}>
-                                <div className={`w-12 h-12 ${isDarkMode ? 'bg-slate-900' : 'bg-slate-100'} rounded-full flex items-center justify-center mb-4 mx-auto`}>
-                                    <Users className={`w-6 h-6 ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`} />
-                                </div>
-                                <h3 className={`font-semibold mb-2 ${isDarkMode ? 'text-slate-300' : 'text-slate-700'}`}>Community Building</h3>
-                                <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>Creating collaborative ecosystems for change</p>
-                            </div>
-
-                            <div className={`p-6 rounded-lg ${isDarkMode ? 'bg-gray-800' : 'bg-gray-50 '} cursor-pointer transition-all duration-300 hover:shadow-lg`}>
-                                <div className={`w-12 h-12 ${isDarkMode ? 'bg-slate-900' : 'bg-slate-100'} rounded-full flex items-center justify-center mb-4 mx-auto`}>
-                                    <Heart className={`w-6 h-6 ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`} />
-                                </div>
-                                <h3 className={`font-semibold mb-2 ${isDarkMode ? 'text-slate-300' : 'text-slate-700'}`}>Social Impact</h3>
-                                <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>Driving sustainable positive change</p>
-                            </div>
+                            {[
+                                { icon: BookOpen, label: "Education", color: "slate" },
+                                { icon: Stethoscope, label: "Healthcare", color: "emerald" },
+                                { icon: Home, label: "Basic Needs", color: "purple" },
+                                { icon: Heart, label: "Loving Care", color: "rose" }
+                            ].map((item) => (
+                                <motion.div
+                                    key={item.label}
+                                    className={`p-3 rounded-lg text-center ${isDarkMode ? 'bg-slate-800 text-white' : 'bg-gray-100'}`}
+                                    whileHover={{ y: -5 }}
+                                    transition={{ duration: 0.2 }}
+                                >
+                                    <div className={`w-8 h-8 mx-auto mb-2 rounded-lg ${isDarkMode ? 'bg-slate-700' : 'bg-slate-50'} flex items-center justify-center`}>
+                                        <item.icon className={`w-4 h-4 ${isDarkMode ? `text-${item.color}-400` : `text-${item.color}-600`}`} />
+                                    </div>
+                                    <p className="text-sm font-medium ">
+                                        {item.label}
+                                    </p>
+                                </motion.div>
+                            ))}
                         </motion.div>
 
-                        {/* Call to action buttons */}
-                        <motion.div
-                            className="flex flex-col sm:flex-row gap-5 justify-start items-center"
+                        {/* Action Buttons */}
+                        <motion.div 
+                            className="flex flex-col sm:flex-row gap-4"
                             variants={itemVariants}
                         >
                             <motion.button
                                 onClick={() => setActiveSection('portfolio')}
-                                className={`group relative px-8 py-4 rounded-lg font-semibold transition-all duration-300 overflow-hidden ${isDarkMode ? 'bg-slate-700 hover:bg-slate-600 text-white' : 'bg-slate-600 hover:bg-slate-500 text-white'} shadow-md hover:shadow-lg`}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
+                                className={`px-6 cursor-pointer py-3 ${isDarkMode ? 'bg-slate-600 hover:bg-slate-700' : 'bg-slate-600 hover:bg-slate-700'} text-white rounded-lg font-semibold flex items-center justify-center`}
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
                             >
-                                <span className="relative z-10 flex items-center">
-                                    View My Work
-                                    <ArrowRight className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" />
-                                </span>
+                                View My Work
+                                <ArrowRight className="w-4 h-4 ml-2" />
                             </motion.button>
 
-                            <motion.a
+                            <motion.button
                                 onClick={() => setActiveSection('contact')}
-                                className={`group relative px-8 py-4 rounded-lg font-semibold border transition-all duration-300 overflow-hidden ${isDarkMode ? 'border-slate-500 text-slate-400 hover:bg-slate-700' : 'border-slate-500 text-slate-600 hover:bg-slate-500 hover:text-white'} shadow-md hover:shadow-lg`}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
+                                className={`px-6 py-3 cursor-pointer rounded-lg font-semibold border ${isDarkMode ? 'border-slate-600 text-slate-300 hover:bg-slate-800' : 'border-slate-300 text-slate-700 hover:bg-slate-50'}`}
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
                             >
-                                <span className="relative z-10 flex items-center">
-                                    <Linkedin className="w-5 h-5 mr-2" />
-                                    Connect on LinkedIn
+                                <span className="flex items-center justify-center">
+                                    <Mail className="w-4 h-4 mr-2" />
+                                    Get In Touch
                                 </span>
-                            </motion.a>
+                            </motion.button>
                         </motion.div>
-
                     </div>
+
+                    {/* Image Section */}
+                    <motion.div 
+                        className="relative flex justify-center lg:justify-end"
+                        variants={itemVariants}
+                    >
+                        <div className="relative w-72 h-72 lg:w-132 lg:h-132">
+                            <div className={`absolute inset-0 rounded-2xl ${isDarkMode ? 'bg-slate-800' : 'bg-white'} shadow-xl`} />
+                            <div className="absolute inset-3 rounded-xl overflow-hidden">
+                                <img
+                                    src="/logos/chance.jpeg"
+                                    alt="Niyotugendana Chancelline - Professional Portrait"
+                                    className="w-full h-full object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+                            </div>
+                            
+                            {/* Experience badge */}
+                            <motion.div
+                                className={`absolute -bottom-4 -left-4 px-4 py-2 rounded-lg ${isDarkMode ? 'bg-slate-800 text-white' : 'bg-white text-slate-900'} shadow-lg border ${isDarkMode ? 'border-slate-700' : 'border-slate-200'}`}
+                                whileHover={{ y: -3 }}
+                            >
+                                <p className="text-sm font-semibold">5+ Years Experience</p>
+                            </motion.div>
+                        </div>
+                    </motion.div>
                 </motion.div>
             </div>
         </div>

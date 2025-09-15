@@ -34,7 +34,7 @@ const App = () => {
         {activeSection === 'essay' && <RenderEssay isDarkMode={isDarkMode} />}
         {activeSection === 'contact' && <RenderContact isDarkMode={isDarkMode} />}
       </main>
-      <Footer isDarkMode={isDarkMode} setActiveSection={setActiveSection}/>
+      <Footer isDarkMode={isDarkMode} setActiveSection={setActiveSection} />
     </div>
   );
 }
