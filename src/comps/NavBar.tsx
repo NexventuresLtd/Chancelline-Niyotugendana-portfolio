@@ -43,7 +43,10 @@ export const RenderNavigation = ({ isDarkMode, setActiveSection, setIsMenuOpen, 
                         >
                             <div>
                                 <h1 className={`text-lg font-bold ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
-                                    Niyotugendana chancelline
+                                    <span className="lg:hidden">
+                                        Niyotugendana chancelline
+                                    </span>
+                                    <span className="max-lg:block">NC</span>
                                 </h1>
                                 <p className={`text-xs ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
                                     Child Advocate & Social Entrepreneur
