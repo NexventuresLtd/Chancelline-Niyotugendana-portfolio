@@ -44,7 +44,7 @@ export const RenderContact = ({ isDarkMode }: ContProps) => {
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className={`${isDarkMode ? 'bg-slate-800/50 border-slate-700' : 'bg-white/70 border-slate-200'} backdrop-blur-sm border rounded-2xl p-8 shadow-2xl`}
+                        className={`${isDarkMode ? 'bg-slate-800/50 border-slate-700' : 'bg-white/70 border-slate-200'} backdrop-blur-sm border rounded-2xl p-8 `}
                     >
                         <h3 className={`text-3xl font-bold mb-8 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
                             Send Message
@@ -90,7 +90,7 @@ export const RenderContact = ({ isDarkMode }: ContProps) => {
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                                 type="submit"
-                                className="w-full py-4 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform"
+                                className="w-full py-4 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white rounded-xl font-semibold text-lg  transition-all duration-300 transform"
                             >
                                 Send Message
                             </motion.button>
@@ -105,7 +105,7 @@ export const RenderContact = ({ isDarkMode }: ContProps) => {
                         className="space-y-8"
                     >
                         {/* Profile Card */}
-                        <div className={`${isDarkMode ? 'bg-slate-800/50 border-slate-700' : 'bg-white/70 border-slate-200'} backdrop-blur-sm border rounded-2xl p-8 shadow-2xl`}>
+                        <div className={`${isDarkMode ? 'bg-slate-800/50 border-slate-700' : 'bg-white/70 border-slate-200'} backdrop-blur-sm border rounded-2xl p-8 `}>
                             <h3 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
                                 Contact Information
                             </h3>
@@ -156,7 +156,7 @@ export const RenderContact = ({ isDarkMode }: ContProps) => {
                         </div>
 
                         {/* Social Links */}
-                        <div className={`${isDarkMode ? 'bg-slate-800/50 border-slate-700' : 'bg-white/70 border-slate-200'} backdrop-blur-sm border rounded-2xl p-8 shadow-2xl`}>
+                        <div className={`${isDarkMode ? 'bg-slate-800/50 border-slate-700' : 'bg-white/70 border-slate-200'} backdrop-blur-sm border rounded-2xl p-8 `}>
                             <h4 className={`text-2xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
                                 Let's Connect
                             </h4>
