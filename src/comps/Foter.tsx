@@ -1,4 +1,4 @@
-import { BookOpen, Briefcase, Clock, FileText, Github, Home, Linkedin, Mail, ArrowUp, MapPin, Phone } from "lucide-react";
+import { BookOpen, Briefcase, Clock, FileText, Github, Home, Linkedin, Mail, ArrowUp, MapPin } from "lucide-react";
 import { useState } from "react";
 
 interface renderProps {

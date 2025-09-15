@@ -1,4 +1,4 @@
-import { BookOpen, Briefcase, Clock, FileText, Home, Mail, Menu, Moon, Sun, X, Heart } from "lucide-react";
+import { BookOpen, Briefcase, Clock, FileText, Home, Mail, Menu, Moon, Sun, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navigation = [

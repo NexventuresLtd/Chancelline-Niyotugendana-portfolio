@@ -184,7 +184,7 @@ export const RenderContact = ({ isDarkMode }: ContProps) => {
                                         label: 'Twitter',
                                         color: 'hover:bg-blue-500'
                                     },
-                                ].map((item, index) => (
+                                ].map((item) => (
                                     <motion.a
                                         key={item.label}
                                         href={item.href}

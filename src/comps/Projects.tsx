@@ -1,4 +1,4 @@
-import { Download, Eye, X, ExternalLink, Calendar, MapPin, Building, GraduationCap, Target, Heart, Users, Camera, BookOpen } from "lucide-react";
+import { Eye, X, Calendar, MapPin } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 
