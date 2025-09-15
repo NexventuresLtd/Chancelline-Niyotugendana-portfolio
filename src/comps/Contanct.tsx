@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Twitter, Phone, MapPin } from "lucide-react";
+import {  Linkedin, Mail, Phone, MapPin, Instagram } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -168,19 +168,19 @@ export const RenderContact = ({ isDarkMode }: ContProps) => {
                                 {[ 
                                     { 
                                         icon: <Linkedin className="w-6 h-6" />, 
-                                        href: 'https://linkedin.com/in/chancelline-niyotugendana-7430512a4', 
+                                        href: 'https://www.linkedin.com/in/chancelline-niyotugendana-7430512a4', 
                                         label: 'LinkedIn',
                                         color: 'hover:bg-blue-600'
                                     },
+                                    // { 
+                                    //     icon: <Github className="w-6 h-6" />, 
+                                    //     href: 'https://github.com/chance-niyo', 
+                                    //     label: 'GitHub',
+                                    //     color: 'hover:bg-gray-700'
+                                    // },
                                     { 
-                                        icon: <Github className="w-6 h-6" />, 
-                                        href: 'https://github.com/chance-niyo', 
-                                        label: 'GitHub',
-                                        color: 'hover:bg-gray-700'
-                                    },
-                                    { 
-                                        icon: <Twitter className="w-6 h-6" />, 
-                                        href: 'https://twitter.com/chance-niyo', 
+                                        icon: <Instagram className="w-6 h-6" />, 
+                                        href: 'https://www.instagram.com/chance_lline?igsh=aTBnejZjejRoMHN2', 
                                         label: 'Twitter',
                                         color: 'hover:bg-blue-500'
                                     },
