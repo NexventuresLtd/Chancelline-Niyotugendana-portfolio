@@ -79,7 +79,7 @@ export const Footer = ({ isDarkMode, setActiveSection }: renderProps) => {
                             </a>
                             
                             <a
-                                href="mailto:s.igiraneza@alustudent.com"
+                                href="mailto:c.niyotugen@alustudent.com"
                                 className={`group relative p-4 ${isDarkMode ? 'bg-gray-900 hover:bg-slate-500' : 'bg-white hover:bg-slate-500'} rounded-xl transition-all duration-300  hover:shadow-xl hover:scale-105`}
                                 aria-label="Email"
                                 onMouseEnter={() => setHoveredLink('email')}
@@ -127,10 +127,10 @@ export const Footer = ({ isDarkMode, setActiveSection }: renderProps) => {
                                 <div>
                                     <p className={`text-sm font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'} mb-1`}>Email</p>
                                     <a 
-                                        href="mailto:s.igiraneza@alustudent.com"
+                                        href="mailto:c.niyotugen@alustudent.com"
                                         className={`${isDarkMode ? 'text-white hover:text-slate-400' : 'text-gray-900 hover:text-slate-600'} transition-colors duration-300 font-medium`}
                                     >
-                                        s.igiraneza@alustudent.com
+                                        c.niyotugen@alustudent.com
                                     </a>
                                 </div>
                             </div>

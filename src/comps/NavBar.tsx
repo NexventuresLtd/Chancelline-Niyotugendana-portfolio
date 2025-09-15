@@ -1,4 +1,4 @@
-import { BookOpen, Briefcase, Clock, FileText, Home, Mail, Menu, Moon, Sun, X } from "lucide-react";
+import { Book, BookOpen, Briefcase, Clock, FileText, Home, Mail, Menu, Moon, Sun, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navigation = [
@@ -7,6 +7,7 @@ const navigation = [
     { id: 'portfolio', label: 'Portfolio', icon: Briefcase },
     { id: 'timeline', label: 'Timeline', icon: Clock },
     { id: 'essay', label: 'Leadership Essay', icon: BookOpen },
+    { id: 'education', label: 'Education', icon: Book },
     { id: 'contact', label: 'Contact', icon: Mail }
 ];
 
