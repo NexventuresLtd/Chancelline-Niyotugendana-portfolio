@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navigation = [
     { id: 'home', label: 'Home', icon: Home },
-    { id: 'resume', label: 'CV/Resume', icon: FileText },
+    { id: 'resume', label: 'CV', icon: FileText },
     { id: 'portfolio', label: 'Portfolio', icon: Briefcase },
     { id: 'timeline', label: 'Timeline', icon: Clock },
-    { id: 'essay', label: 'Leadership Essay', icon: BookOpen },
+    { id: 'essay', label: 'Leadership', icon: BookOpen },
     { id: 'education', label: 'Education', icon: Book },
     { id: 'contact', label: 'Contact', icon: Mail }
 ];
@@ -33,8 +33,8 @@ export const RenderNavigation = ({ isDarkMode, setActiveSection, setIsMenuOpen, 
                 animate={{ y: 0 }}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
-                <div className="max-w-11/12 mx-auto px-6 lg:px-8">
-                    <div className="flex justify-between items-center h-18">
+                <div className="max-w-full xl:max-w-11/12 mx-auto px-6 xl:px-8">
+                    <div className="flex justify-between items-center h-18 gap-3">
                         {/* Logo/Brand */}
                         <motion.div
                             className="flex-shrink-0 flex items-center space-x-3"
@@ -42,8 +42,8 @@ export const RenderNavigation = ({ isDarkMode, setActiveSection, setIsMenuOpen, 
                             transition={{ duration: 0.2 }}
                         >
                             <div>
-                                <h1 className={`text-xl font-bold ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
-                                    Niyotugendana Chancelline
+                                <h1 className={`text-lg font-bold ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
+                                    Niyotugendana chancelline
                                 </h1>
                                 <p className={`text-xs ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
                                     Child Advocate & Social Entrepreneur
@@ -52,7 +52,7 @@ export const RenderNavigation = ({ isDarkMode, setActiveSection, setIsMenuOpen, 
                         </motion.div>
 
                         {/* Desktop Navigation */}
-                        <div className="hidden lg:block">
+                        <div className="hidden xl:block">
                             <div className="flex items-center space-x-2">
                                 {navigation.map((item, index) => {
                                     const Icon = item.icon;
@@ -133,7 +133,7 @@ export const RenderNavigation = ({ isDarkMode, setActiveSection, setIsMenuOpen, 
                             {/* Mobile Menu Toggle */}
                             <motion.button
                                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                className={`lg:hidden p-3 rounded-xl transition-all duration-300 ${isDarkMode
+                                className={`xl:hidden p-3 rounded-xl transition-all duration-300 ${isDarkMode
                                     ? 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white'
                                     : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900'
                                     } shadow-sm`}
@@ -157,7 +157,7 @@ export const RenderNavigation = ({ isDarkMode, setActiveSection, setIsMenuOpen, 
             <AnimatePresence>
                 {isMenuOpen && (
                     <motion.div
-                        className={`lg:hidden fixed inset-0 top-18 z-40 ${isDarkMode ? 'bg-slate-900/95' : 'bg-white/95'} backdrop-blur-md`}
+                        className={`xl:hidden fixed inset-0 top-18 z-40 ${isDarkMode ? 'bg-slate-900/95' : 'bg-white/95'} backdrop-blur-md`}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
@@ -189,7 +189,7 @@ export const RenderNavigation = ({ isDarkMode, setActiveSection, setIsMenuOpen, 
                                                 setIsMenuOpen(false);
                                             }}
                                             className={`w-full flex items-center px-4 py-4 rounded-xl text-left font-medium transition-all duration-300 ${isActive
-                                                ? `bg-slate-600 text-white shadow-lg`
+                                                ? `bg-slate-600 text-white shadow-xl`
                                                 : `${isDarkMode ? 'text-slate-300 hover:bg-slate-700 hover:text-white' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`
                                                 }`}
                                             initial={{ opacity: 0, x: -20 }}
@@ -198,14 +198,14 @@ export const RenderNavigation = ({ isDarkMode, setActiveSection, setIsMenuOpen, 
                                             whileHover={{ scale: 1.02 }}
                                             whileTap={{ scale: 0.98 }}
                                         >
-                                            <div className={`w-10 h-10 rounded-lg flex items-center justify-center mr-3 ${isActive
+                                            <div className={`w-10 h-10 rounded-xl flex items-center justify-center mr-3 ${isActive
                                                 ? 'bg-white/20'
                                                 : isDarkMode ? 'bg-slate-600' : 'bg-slate-200'
                                                 }`}>
                                                 <Icon className="w-5 h-5" />
                                             </div>
                                             <div>
-                                                <span className="text-lg">{item.label}</span>
+                                                <span className="text-xl">{item.label}</span>
                                                 {item.id === 'home' && (
                                                     <p className={`text-sm mt-1 ${isActive ? 'text-white/70' : isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>
                                                         Mission & Overview
