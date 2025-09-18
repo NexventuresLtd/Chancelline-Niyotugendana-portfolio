@@ -1,4 +1,4 @@
-import { BookOpen, Briefcase, Clock, FileText, Github, Home, Linkedin, Mail, ArrowUp, MapPin } from "lucide-react";
+import { BookOpen, Briefcase, Clock, FileText, Github, Home, Linkedin, Mail, ArrowUp, MapPin, Instagram } from "lucide-react";
 import { useState } from "react";
 
 interface renderProps {
@@ -66,15 +66,15 @@ export const Footer = ({ isDarkMode, setActiveSection }: renderProps) => {
                             </a>
                             
                             <a
-                                href="https://github.com/chance-niyo"
+                                href="https://www.instagram.com/chance_lline/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={`group relative p-4 ${isDarkMode ? 'bg-gray-900 hover:bg-slate-500' : 'bg-white hover:bg-slate-500'} rounded-xl transition-all duration-300  hover:shadow-xl hover:scale-105`}
-                                aria-label="GitHub"
+                                aria-label="instagram"
                                 onMouseEnter={() => setHoveredLink('github')}
                                 onMouseLeave={() => setHoveredLink(null)}
                             >
-                                <Github className={`w-6 h-6 ${hoveredLink === 'github' ? 'text-white' : 'text-slate-500'} transition-colors duration-300`} />
+                                <Instagram className={`w-6 h-6 ${hoveredLink === 'instagram' ? 'text-white' : 'text-slate-500'} transition-colors duration-300`} />
                                 <div className="absolute -top-2 -right-2 w-3 h-3 bg-slate-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </a>
                             
@@ -171,10 +171,10 @@ export const Footer = ({ isDarkMode, setActiveSection }: renderProps) => {
                             © {new Date().getFullYear()} niyotugendana chancelline. All rights reserved.
                         </p>
                         <p className={`text-sm ${isDarkMode ? 'text-gray-500' : 'text-gray-500'} mt-1`}>
-                            Designed and built with{' '}
+                            Designed and built by{' '} Niyotugendana chancelline
                             <a 
                                 href="https://www.nexventures.net/" 
-                                className="text-transparent font-medium transition-colors duration-300"
+                                className="text-transparent hidden font-medium transition-colors duration-300"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >

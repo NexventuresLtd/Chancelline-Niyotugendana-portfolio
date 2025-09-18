@@ -1,6 +1,7 @@
-import { Eye, X, Calendar, MapPin } from "lucide-react";
+import { Eye, X, Calendar, MapPin, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
+import SimpleGallery from "./gallery";
 
 interface PortProps {
     isDarkMode: boolean;
@@ -12,18 +13,31 @@ interface PopupData {
     details: string[];
     duration?: string;
     location?: string;
+    image?: string;
+}
+
+interface PortfolioItem {
+    id: number;
+    title: string;
+    type: string;
+    description: string;
+    image: string;
+    tags: string[];
+    duration?: string;
+    location?: string;
 }
 
 export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
     const [selectedItem, setSelectedItem] = useState<PopupData | null>(null);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-    const portfolioArtefacts = [
+    const portfolioArtefacts: PortfolioItem[] = [
         {
             id: 1,
             title: "Logistics and Finance Intern – Rwanda Biomedical Center",
             type: "Professional Experience",
             description: "Supported logistics operations and procurement processes to strengthen efficiency in supply tracking.",
-            image: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=400&h=250&fit=crop",
+            image: "/logos/chance2.png",
             tags: ["Logistics", "Procurement", "Supply Chain", "Finance"],
             duration: "Jan 2025 – Mar 2025",
             location: "Kigali, Rwanda"
@@ -33,7 +47,7 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
             title: "Secretary, Accountant & Photographer – Flat Production",
             type: "Professional Experience",
             description: "Managed logistical planning, accounting tasks, and visual content delivery for studio operations.",
-            image: "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?w=400&h=250&fit=crop",
+            image: "/logos/chance5.jpeg",
             tags: ["Accounting", "Logistics", "Photography", "Operations"],
             duration: "Jan 2023 – Dec 2023",
             location: "Kigali, Rwanda"
@@ -43,7 +57,7 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
             title: "Volunteer – ALU Financial Aid Team",
             type: "Volunteer Experience",
             description: "Guided incoming students through services and resources to improve campus experience.",
-            image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=250&fit=crop",
+            image: "/logos/chance12.jpeg",
             tags: ["Student Support", "Coordination", "Guidance", "Service"],
             duration: "Jan 2024 – Present",
             location: "African Leadership University"
@@ -53,7 +67,7 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
             title: "Volunteer – ALU Marketing Team",
             type: "Volunteer Experience",
             description: "Produced and managed photography content to promote engagement and awareness.",
-            image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&h=250&fit=crop",
+            image: "/logos/chance7.jpeg",
             tags: ["Photography", "Content Creation", "Marketing", "Engagement"],
             duration: "Sept 2024 – Present",
             location: "African Leadership University"
@@ -63,7 +77,7 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
             title: "Bachelor of Science in Entrepreneurial Leadership",
             type: "Education",
             description: "3rd year student majoring in Education & Healthcare pathways at African Leadership University.",
-            image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop",
+            image: "/logos/chance3.jpeg",
             tags: ["Education", "Healthcare", "Entrepreneurship", "Leadership"],
             duration: "May 2023 – Present",
             location: "African Leadership University"
@@ -73,7 +87,7 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
             title: "CPA Student – ICPAR",
             type: "Education",
             description: "Pursuing CPA certification with focus on Strategy, Leadership, and Corporate Finance.",
-            image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop",
+            image: "/logos/chance13.jpeg",
             tags: ["Accounting", "Finance", "Strategy", "Certification"],
             duration: "Apr 2025 – Present",
             location: "Institute of Certified Public Accountants of Rwanda"
@@ -83,7 +97,7 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
             title: "Chance for All Foundation",
             type: "Project & Achievement",
             description: "Founded and developed a mission to support abandoned children in rural Rwanda.",
-            image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=250&fit=crop",
+            image: "/logos/chance1.png",
             tags: ["Non-profit", "Child Welfare", "Community", "Leadership"],
             duration: "2023 – Present",
             location: "Rural Rwanda"
@@ -93,7 +107,7 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
             title: "MTN Iwacu Muzika Festival",
             type: "Project & Achievement",
             description: "Coordinated and assisted in production for nationwide music festival events.",
-            image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=250&fit=crop",
+            image: "/logos/chance9.jpeg",
             tags: ["Event Coordination", "Production", "Photography", "Team Management"],
             duration: "2024 & 2025",
             location: "Nationwide, Rwanda"
@@ -106,6 +120,7 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
             description: "Supported critical logistics operations and procurement processes to enhance healthcare service efficiency",
             duration: "Jan 2025 – Mar 2025",
             location: "Kigali, Rwanda",
+            image: "/logos/chance2.png",
             details: [
                 "Supported logistics operations including transport coordination and stock movement management",
                 "Assisted procurement processes and maintained vendor communication channels",
@@ -119,6 +134,7 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
             description: "Managed diverse responsibilities across administration, finance, and creative content production",
             duration: "Jan 2023 – Dec 2023",
             location: "Kigali, Rwanda",
+            image: "/logos/chance5.jpeg",
             details: [
                 "Managed logistical planning and delivery of visual content for various projects",
                 "Oversaw accounting tasks and maintained financial records for studio operations",
@@ -132,6 +148,7 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
             description: "Supported incoming students through financial services and resource guidance",
             duration: "Jan 2024 – Present",
             location: "African Leadership University",
+            image: "/logos/chance12.jpeg",
             details: [
                 "Guided incoming students through available financial services and resources",
                 "Improved campus experience through personalized support and coordination",
@@ -145,6 +162,7 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
             description: "Created engaging visual content to promote university events and initiatives",
             duration: "Sept 2024 – Present",
             location: "African Leadership University",
+            image: "/logos/chance7.jpeg",
             details: [
                 "Produced and managed photography content for various university campaigns",
                 "Created engaging visual materials to promote student engagement",
@@ -158,6 +176,7 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
             description: "Pursuing comprehensive education in entrepreneurial leadership with focus on education and healthcare",
             duration: "May 2023 – Present",
             location: "African Leadership University",
+            image: "/logos/chance3.jpeg",
             details: [
                 "3rd year student majoring in Education & Healthcare pathways",
                 "Relevant coursework: Creativity & Innovation, Systems Thinking, Financial Management",
@@ -171,6 +190,7 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
             description: "Pursuing professional accounting certification with strategic focus",
             duration: "Apr 2025 – Present",
             location: "ICPAR, Rwanda",
+            image: "/logos/chance13.jpeg",
             details: [
                 "Currently pursuing CPA certification program",
                 "Relevant courses: Strategy & Leadership, Corporate Finance, Business Law",
@@ -184,6 +204,7 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
             description: "Established foundation to support abandoned children through holistic interventions",
             duration: "2023 – Present",
             location: "Rural Rwanda",
+            image: "/logos/chance1.png",
             details: [
                 "Founded and developed mission to support abandoned children in rural Rwanda",
                 "Designed and implemented holistic interventions for child welfare",
@@ -197,6 +218,7 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
             description: "Supported nationwide music festival production and coordination",
             duration: "2024 & 2025",
             location: "Nationwide, Rwanda",
+            image: "/logos/chance9.jpeg",
             details: [
                 "Worked with Flat Production across Rwanda as Coordinator and Assistant Director",
                 "Supported live video feeding, photography, and production throughout the festival",
@@ -210,11 +232,29 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
     const handleViewClick = (title: string) => {
         if (experienceDetails[title]) {
             setSelectedItem(experienceDetails[title]);
+            // Find the index of the selected item
+            const index = portfolioArtefacts.findIndex(item => item.title === title);
+            setCurrentImageIndex(index);
         }
     };
 
     const closePopup = () => {
         setSelectedItem(null);
+        setCurrentImageIndex(0);
+    };
+
+    const goToNextItem = () => {
+        const nextIndex = (currentImageIndex + 1) % portfolioArtefacts.length;
+        setCurrentImageIndex(nextIndex);
+        const nextTitle = portfolioArtefacts[nextIndex].title;
+        setSelectedItem(experienceDetails[nextTitle]);
+    };
+
+    const goToPrevItem = () => {
+        const prevIndex = (currentImageIndex - 1 + portfolioArtefacts.length) % portfolioArtefacts.length;
+        setCurrentImageIndex(prevIndex);
+        const prevTitle = portfolioArtefacts[prevIndex].title;
+        setSelectedItem(experienceDetails[prevTitle]);
     };
 
     const containerVariants: Variants = {
@@ -313,14 +353,14 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
                             key={artefact.id}
                             variants={itemVariants}
                             whileHover={{ y: -8 }}
-                            className={`group relative ${isDarkMode ? 'bg-slate-800' : 'bg-white'} rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border ${isDarkMode ? 'border-slate-700' : 'border-slate-200'}`}
+                            className={`group relative ${isDarkMode ? 'bg-slate-800' : 'bg-white'} rounded-xl overflow-hidden  hover:shadow-xl transition-all duration-300 border ${isDarkMode ? 'border-slate-700' : 'border-slate-200'}`}
                         >
                             {/* Image Container */}
                             <div className="relative overflow-hidden">
                                 <motion.img
                                     src={artefact.image}
                                     alt={artefact.title}
-                                    className="w-full h-48 object-cover transition-all duration-700 group-hover:scale-110"
+                                    className="w-full h-32 md:h-74 object-cover aspect-square object-center transition-all duration-700 group-hover:scale-110"
                                 />
                                 <div className={`absolute inset-0 ${isDarkMode ? 'bg-gradient-to-t from-slate-900/80 via-transparent to-transparent' : 'bg-gradient-to-t from-black/30 via-transparent to-transparent'}`}></div>
 
@@ -397,7 +437,7 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
                                 initial="hidden"
                                 animate="visible"
                                 exit="exit"
-                                className={`${isDarkMode ? 'bg-slate-800' : 'bg-white'} rounded-xl max-w-3xl w-full max-h-[90vh] overflow-hidden shadow-xl border ${isDarkMode ? 'border-slate-700' : 'border-slate-200'}`}
+                                className={`${isDarkMode ? 'bg-slate-800' : 'bg-white'} rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-xl border ${isDarkMode ? 'border-slate-700' : 'border-slate-200'}`}
                                 onClick={(e) => e.stopPropagation()}
                             >
                                 {/* Header */}
@@ -433,6 +473,46 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
 
                                 {/* Content */}
                                 <div className="p-6 overflow-y-auto max-h-[70vh]">
+                                    {/* Image Preview */}
+                                    {selectedItem.image && (
+                                        <div className="relative mb-6 rounded-lg overflow-hidden">
+                                            <img
+                                                src={selectedItem.image}
+                                                alt={selectedItem.title}
+                                                className="w-full h-90 object-contain"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+
+                                            {/* Navigation Arrows */}
+                                            <div className="absolute inset-y-0 left-0 flex items-center">
+                                                <motion.button
+                                                    whileHover={{ scale: 1.1 }}
+                                                    whileTap={{ scale: 0.9 }}
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        goToPrevItem();
+                                                    }}
+                                                    className={`ml-2 p-2 rounded-full ${isDarkMode ? 'bg-slate-800/80 hover:bg-slate-700/90 text-white' : 'bg-white/80 hover:bg-white text-slate-800'}`}
+                                                >
+                                                    <ChevronLeft className="w-5 h-5" />
+                                                </motion.button>
+                                            </div>
+                                            <div className="absolute inset-y-0 right-0 flex items-center">
+                                                <motion.button
+                                                    whileHover={{ scale: 1.1 }}
+                                                    whileTap={{ scale: 0.9 }}
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        goToNextItem();
+                                                    }}
+                                                    className={`mr-2 p-2 rounded-full ${isDarkMode ? 'bg-slate-800/80 hover:bg-slate-700/90 text-white' : 'bg-white/80 hover:bg-white text-slate-800'}`}
+                                                >
+                                                    <ChevronRight className="w-5 h-5" />
+                                                </motion.button>
+                                            </div>
+                                        </div>
+                                    )}
+
                                     <motion.p
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
@@ -487,6 +567,7 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
                     )}
                 </AnimatePresence>
             </div>
+            <SimpleGallery />
         </div>
     )
 }

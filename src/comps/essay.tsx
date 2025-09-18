@@ -59,11 +59,11 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
     // Get all essay text for reading
     const getEssayText = (sectionId?: string) => {
         const essaySections = {
-            introduction: "Reflective Leadership Essay. A comprehensive reflection on my leadership journey, growth, and future aspirations.",
-            learning: "Learning Experiences That Transformed Me. My journey began with a profound realization during my first community project in 2019. I discovered that traditional top-down approaches to leadership often fail to create sustainable change. This experience taught me the power of collaborative leadership and the importance of listening before leading. The failure of my initial project became a catalyst for growth, forcing me to reevaluate my assumptions about leadership and embrace a more inclusive approach. Another transformative moment came when I had to navigate a crisis that threatened to shut down our social enterprise. This experience taught me resilience, adaptability, and the crucial skill of turning challenges into opportunities. It was during this period that I learned to lead with vulnerability, admitting when I didn't have all the answers and leveraging the collective wisdom of my team.",
-            theories: "Applications of Leadership Theories. Throughout my leadership journey, I have consciously applied various leadership theories to guide my practice. Servant leadership principles have been particularly influential, shaping my belief that leaders exist to serve their teams and communities rather than the other way around. This philosophy has guided my approach to mentoring young entrepreneurs and building inclusive organizational cultures. I have also drawn heavily from transformational leadership theory, focusing on inspiring and motivating others to exceed their own self-interests for the greater good. This approach has been essential in building coalitions and partnerships that have amplified our collective impact. Additionally, situational leadership principles have helped me adapt my leadership style to different contexts and team members' needs.",
-            skills: "Skills, Knowledge, and Mindset Transformation. My leadership capabilities have evolved significantly over the past five years. Initially focused on technical skills and domain expertise, I have developed a more holistic understanding of leadership that encompasses emotional intelligence, systems thinking, and cultural competency. My communication skills have been refined through countless presentations, negotiations, and difficult conversations that required empathy and clarity. Perhaps most importantly, my mindset has shifted from viewing leadership as a position of authority to understanding it as a practice of service and continuous learning. I have learned to embrace uncertainty, welcome feedback, and view failures as learning opportunities rather than setbacks. This growth mindset has enabled me to take on increasingly complex challenges and support others in their own development journeys.",
-            mission: "Mission Journey and Post-Graduation Plans. My mission has always been to create sustainable positive change through innovative leadership and strategic partnerships. This mission has been the north star guiding all my professional and personal decisions. Looking ahead, I plan to expand this mission by establishing a leadership development institute focused on emerging market entrepreneurs and social innovators. Post-graduation, I intend to leverage the knowledge and network gained through my studies to scale our impact across multiple regions. My goal is to create a sustainable ecosystem that supports the next generation of leaders while continuing to address pressing social and economic challenges. This journey has taught me that true leadership is not about reaching a destination, but about continuously growing and empowering others to reach their full potential."
+            introduction: "My Learning Journey: A Reflection. My learning journey has been a meaningful process of growth, where I acquired knowledge, developed essential skills, and transformed my mindset. This journey gave me opportunities to put theory into practice, especially through leadership, and helped me connect my personal mission with my academic and professional aspirations. Reflecting on it allows me to see how I have grown clearly, the key experiences that shaped me, and how these lessons will guide my future.",
+            learning: "Transformation of Skills, Knowledge, and Mindsets. One of the most important transformations I experienced was in the development of my skills, knowledge, and mindset. I strengthened practical skills such as problem-solving, communication, teamwork, and presentation. These were not only academic gains but also life skills that helped me collaborate effectively and present ideas with confidence. My knowledge also expanded, especially in leadership theories, systems thinking, and social innovation. These areas gave me a new way to analyze complex challenges and see connections between issues, stakeholders, and long-term solutions. The greatest shift, however, was in my mindset. I moved from focusing only on immediate tasks to adopting resilience, adaptability, and openness to different perspectives. This mindset shift gave me the confidence to face challenges as opportunities for learning rather than obstacles.",
+            theories: "Specific Learning Experiences and Leadership Theory Application. Along the way, certain learning experiences stood out as truly transformational. Group projects, for instance, were moments where I practiced inclusivity and collaboration. I applied servant leadership by listening to peers, encouraging quieter members, and making sure everyone's input was valued. This not only strengthened our teamwork but also improved the quality of our outcomes. At other times, when plans changed suddenly, I leaned on adaptive leadership. Instead of resisting or feeling frustrated, I guided my team to reframe the situation, find new strategies, and move forward with confidence. These experiences taught me that leadership is not about control but about empowering others, creating space for contributions, and guiding people through uncertainty. Another highlight was working on mission-related artefacts such as the Impact Gaps Canvas. This project required me to deeply analyze the systemic issues affecting abandoned children in rural Rwanda, map out the stakeholders, and propose meaningful solutions. It was a turning point for me because it connected theory to practice and helped me see how academic learning could directly support my mission. Through this experience, I applied systems thinking and transformational leadership by not only identifying problems but also envisioning long-term change and inspiring others to see what is possible.",
+            skills: "Connection to Mission Journey, Career Aspirations, and Future Plans. These experiences connect directly to my mission journey and career aspirations. After graduation, I plan to expand my NGO, Chance for All, to break the cycle of child abandonment in rural communities. The insights, skills, and mindset I gained during my learning journey will help me design sustainable interventions and scale our impact. My career goal is to create systemic change through education, healthcare, and mentorship for vulnerable children. The leadership theories I practiced will shape my leadership style grounded in empathy, adaptability, and vision, so that I can inspire others and lead effectively in dynamic environments.",
+            mission: "Conclusion. In conclusion, my learning journey has been transformative in every sense. It has strengthened my skills, broadened my knowledge, and reshaped my mindset. It also allowed me to apply leadership theories in real-life contexts, preparing me to be a reflective and adaptable leader. Most importantly, it clarified my purpose and reinforced my mission, giving me the confidence to move forward with impact. I am committed to carrying these lessons into my career, leading with empathy and vision, and continuing to create change in the communities I serve."
         };
 
         if (sectionId) {
@@ -137,7 +137,7 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                                     </div>
                                     <div>
                                         <h1 className={`text-4xl md:text-5xl font-bold ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
-                                            Reflective Leadership Essay
+                                            My Learning Journey: A Reflection
                                         </h1>
                                         <p className={`text-lg ${isDarkMode ? 'text-slate-400' : 'text-slate-600'} mt-2`}>
                                             By Niyotugendana Chancelline
@@ -146,19 +146,19 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                                 </div>
                                 
                                 <p className={`text-lg ${isDarkMode ? 'text-slate-300' : 'text-slate-600'} leading-relaxed max-w-2xl`}>
-                                    A comprehensive reflection on my leadership journey, personal growth, and future aspirations in creating sustainable positive change.
+                                    A reflective essay on my transformative learning journey, leadership development, and mission to create sustainable change.
                                 </p>
                                 
                                 <div className="flex items-center gap-6 mt-6">
                                     <div className="flex items-center gap-2">
                                         <Clock className={`w-5 h-5 ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`} />
                                         <span className={`text-sm ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>
-                                            8 min read
+                                            6 min read
                                         </span>
                                     </div>
                                     <div className="w-1 h-1 bg-slate-400 rounded-full"></div>
                                     <span className={`text-sm ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>
-                                        Leadership Development
+                                        Personal Growth & Leadership
                                     </span>
                                 </div>
                             </div>
@@ -199,10 +199,10 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                                 <BookOpen className={`w-9 h-9 ${isDarkMode ? 'text-white' : 'text-slate-700'}`} />
                             </div>
                             <blockquote className={`text-2xl italic font-medium max-w-3xl mx-auto leading-relaxed ${isDarkMode ? 'text-slate-200' : 'text-slate-700'}`}>
-                                "Leadership is not about being in charge. It is about taking care of those in your charge."
+                                "Leadership and learning are indispensable to each other."
                             </blockquote>
                             <cite className={`block mt-4 text-lg ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>
-                                — Simon Sinek
+                                — John F. Kennedy
                             </cite>
                         </div>
 
@@ -218,7 +218,7 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                                         <Lightbulb className={`w-8 h-8 ${isDarkMode ? 'text-yellow-400' : 'text-yellow-600'}`} />
                                     </div>
                                     <h2 className={`text-3xl font-bold ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
-                                        Learning Experiences That Transformed Me
+                                        Transformation of Skills, Knowledge, and Mindsets
                                     </h2>
                                 </div>
                                 <button
@@ -237,17 +237,17 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                             <div className="space-y-6">
                                 <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-slate-700/40 border-slate-600' : 'bg-slate-50/70 border-slate-200'} border backdrop-blur-sm hover:shadow-xl transition-all duration-300`}>
                                     <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-slate-200' : 'text-slate-700'}`}>
-                                        My journey began with a profound realization during my first community project in 2019. I discovered that traditional top-down approaches to leadership often fail to create sustainable change. This experience taught me the power of collaborative leadership and the importance of <strong>listening before leading</strong>.
+                                        One of the most important transformations I experienced was in the development of my skills, knowledge, and mindset. I strengthened practical skills such as <strong>problem-solving, communication, teamwork, and presentation</strong>. These were not only academic gains but also life skills that helped me collaborate effectively and present ideas with confidence.
                                     </p>
                                 </div>
                                 <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-slate-700/40 border-slate-600' : 'bg-slate-50/70 border-slate-200'} border backdrop-blur-sm hover:shadow-xl transition-all duration-300`}>
                                     <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-slate-200' : 'text-slate-700'}`}>
-                                        The failure of my initial project became a <strong>catalyst for growth</strong>, forcing me to reevaluate my assumptions about leadership and embrace a more inclusive approach. Another transformative moment came when I had to navigate a crisis that threatened to shut down our social enterprise.
+                                        My knowledge also expanded, especially in <strong>leadership theories, systems thinking, and social innovation</strong>. These areas gave me a new way to analyze complex challenges and see connections between issues, stakeholders, and long-term solutions.
                                     </p>
                                 </div>
                                 <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-slate-700/40 border-slate-600' : 'bg-slate-50/70 border-slate-200'} border backdrop-blur-sm hover:shadow-xl transition-all duration-300`}>
                                     <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-slate-200' : 'text-slate-700'}`}>
-                                        This experience taught me <strong>resilience, adaptability</strong>, and the crucial skill of turning challenges into opportunities. It was during this period that I learned to lead with vulnerability, admitting when I didn't have all the answers and leveraging the collective wisdom of my team.
+                                        The greatest shift, however, was in my mindset. I moved from focusing only on immediate tasks to adopting <strong>resilience, adaptability, and openness to different perspectives</strong>. This mindset shift gave me the confidence to face challenges as opportunities for learning rather than obstacles.
                                     </p>
                                 </div>
                             </div>
@@ -265,7 +265,7 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                                         <BookOpen className={`w-8 h-8 ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`} />
                                     </div>
                                     <h2 className={`text-3xl font-bold ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
-                                        Applications of Leadership Theories
+                                        Learning Experiences and Leadership Theory Application
                                     </h2>
                                 </div>
                                 <button
@@ -280,23 +280,15 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                                 </button>
                             </div>
                             
-                            <div className="grid md:grid-cols-2 gap-8 mb-8">
+                            <div className="space-y-6 mb-8">
                                 <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-slate-700/40 border-slate-600' : 'bg-slate-50/70 border-slate-200'} border backdrop-blur-sm hover:shadow-xl transition-all duration-300`}>
-                                    <h3 className={`font-bold text-xl mb-4 ${isDarkMode ? 'text-slate-200' : 'text-slate-800'} flex items-center gap-2`}>
-                                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                                        Servant Leadership
-                                    </h3>
-                                    <p className={`leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
-                                        Servant leadership principles have been particularly influential, shaping my belief that leaders exist to serve their teams and communities. This philosophy has guided my approach to mentoring young entrepreneurs and building inclusive organizational cultures.
+                                    <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-slate-200' : 'text-slate-700'}`}>
+                                        Along the way, certain learning experiences stood out as truly transformational. Group projects, for instance, were moments where I practiced inclusivity and collaboration. I applied <strong>servant leadership</strong> by listening to peers, encouraging quieter members, and making sure everyone's input was valued. This not only strengthened our teamwork but also improved the quality of our outcomes.
                                     </p>
                                 </div>
                                 <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-slate-700/40 border-slate-600' : 'bg-slate-50/70 border-slate-200'} border backdrop-blur-sm hover:shadow-xl transition-all duration-300`}>
-                                    <h3 className={`font-bold text-xl mb-4 ${isDarkMode ? 'text-slate-200' : 'text-slate-800'} flex items-center gap-2`}>
-                                        <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                                        Transformational Leadership
-                                    </h3>
-                                    <p className={`leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
-                                        I have drawn heavily from transformational leadership theory, focusing on inspiring others to exceed their self-interests for the greater good. This approach has been essential in building coalitions and partnerships.
+                                    <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-slate-200' : 'text-slate-700'}`}>
+                                        At other times, when plans changed suddenly, I leaned on <strong>adaptive leadership</strong>. Instead of resisting or feeling frustrated, I guided my team to reframe the situation, find new strategies, and move forward with confidence. These experiences taught me that leadership is not about control but about empowering others, creating space for contributions, and guiding people through uncertainty.
                                     </p>
                                 </div>
                             </div>
@@ -304,10 +296,10 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                             <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-slate-700/40 border-slate-600' : 'bg-slate-50/70 border-slate-200'} border backdrop-blur-sm hover:shadow-xl transition-all duration-300`}>
                                 <h3 className={`font-bold text-xl mb-4 ${isDarkMode ? 'text-slate-200' : 'text-slate-800'} flex items-center gap-2`}>
                                     <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                                    Situational Leadership
+                                    Impact Gaps Canvas Project
                                 </h3>
                                 <p className={`leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
-                                    Situational leadership principles have helped me adapt my leadership style to different contexts and team members' needs, ensuring that my approach is always tailored to the specific challenges and opportunities at hand.
+                                    Another highlight was working on mission-related artefacts such as the Impact Gaps Canvas. This project required me to deeply analyze the systemic issues affecting abandoned children in rural Rwanda, map out the stakeholders, and propose meaningful solutions. It was a turning point for me because it connected theory to practice and helped me see how academic learning could directly support my mission. Through this experience, I applied systems thinking and transformational leadership by not only identifying problems but also envisioning long-term change and inspiring others to see what is possible.
                                 </p>
                             </div>
                         </section>
@@ -324,7 +316,7 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                                         <TrendingUp className={`w-8 h-8 ${isDarkMode ? 'text-green-400' : 'text-green-600'}`} />
                                     </div>
                                     <h2 className={`text-3xl font-bold ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
-                                        Skills, Knowledge, and Mindset Transformation
+                                        Connection to Mission Journey and Future Plans
                                     </h2>
                                 </div>
                                 <button
@@ -339,26 +331,17 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                                 </button>
                             </div>
                             
-                            <div className="grid md:grid-cols-2 gap-8 mb-8">
+                            <div className="space-y-6">
                                 <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-slate-700/40 border-slate-600' : 'bg-slate-50/70 border-slate-200'} border backdrop-blur-sm hover:shadow-xl transition-all duration-300`}>
-                                    <h3 className={`font-bold text-xl mb-4 ${isDarkMode ? 'text-slate-200' : 'text-slate-800'}`}>Technical to Holistic</h3>
-                                    <p className={`leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
-                                        My leadership capabilities have evolved from technical expertise to a holistic understanding encompassing emotional intelligence, systems thinking, and cultural competency.
+                                    <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-slate-200' : 'text-slate-700'}`}>
+                                        These experiences connect directly to my mission journey and career aspirations. After graduation, I plan to expand my NGO, <strong>Chance for All</strong>, to break the cycle of child abandonment in rural communities. The insights, skills, and mindset I gained during my learning journey will help me design sustainable interventions and scale our impact.
                                     </p>
                                 </div>
                                 <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-slate-700/40 border-slate-600' : 'bg-slate-50/70 border-slate-200'} border backdrop-blur-sm hover:shadow-xl transition-all duration-300`}>
-                                    <h3 className={`font-bold text-xl mb-4 ${isDarkMode ? 'text-slate-200' : 'text-slate-800'}`}>Communication Mastery</h3>
-                                    <p className={`leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
-                                        My communication skills have been refined through countless presentations, negotiations, and difficult conversations that required empathy and clarity.
+                                    <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-slate-200' : 'text-slate-700'}`}>
+                                        My career goal is to create <strong>systemic change</strong> through education, healthcare, and mentorship for vulnerable children. The leadership theories I practiced will shape my leadership style grounded in empathy, adaptability, and vision, so that I can inspire others and lead effectively in dynamic environments.
                                     </p>
                                 </div>
-                            </div>
-                            
-                            <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-slate-700/40 border-slate-600' : 'bg-slate-50/70 border-slate-200'} border backdrop-blur-sm hover:shadow-xl transition-all duration-300`}>
-                                <h3 className={`font-bold text-xl mb-4 ${isDarkMode ? 'text-slate-200' : 'text-slate-800'}`}>Growth Mindset</h3>
-                                <p className={`leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
-                                    My mindset has shifted from viewing leadership as a position of authority to understanding it as a practice of service and continuous learning. I've learned to embrace uncertainty, welcome feedback, and view failures as learning opportunities.
-                                </p>
                             </div>
                         </section>
 
@@ -374,7 +357,7 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                                         <Target className={`w-8 h-8 ${isDarkMode ? 'text-red-400' : 'text-red-600'}`} />
                                     </div>
                                     <h2 className={`text-3xl font-bold ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
-                                        Mission Journey and Post-Graduation Plans
+                                        Conclusion
                                     </h2>
                                 </div>
                                 <button
@@ -392,17 +375,12 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                             <div className="space-y-6">
                                 <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-slate-700/40 border-slate-600' : 'bg-slate-50/70 border-slate-200'} border backdrop-blur-sm hover:shadow-xl transition-all duration-300`}>
                                     <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-slate-200' : 'text-slate-700'}`}>
-                                        My mission has always been to create <strong>sustainable positive change</strong> through innovative leadership and strategic partnerships. This mission has been the north star guiding all my professional and personal decisions.
+                                        In conclusion, my learning journey has been <strong>transformative in every sense</strong>. It has strengthened my skills, broadened my knowledge, and reshaped my mindset. It also allowed me to apply leadership theories in real-life contexts, preparing me to be a reflective and adaptable leader.
                                     </p>
                                 </div>
                                 <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-slate-700/40 border-slate-600' : 'bg-slate-50/70 border-slate-200'} border backdrop-blur-sm hover:shadow-xl transition-all duration-300`}>
                                     <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-slate-200' : 'text-slate-700'}`}>
-                                        Looking ahead, I plan to expand this mission by establishing a <strong>leadership development institute</strong> focused on emerging market entrepreneurs and social innovators, leveraging the knowledge and network gained through my studies.
-                                    </p>
-                                </div>
-                                <div className={`p-8 rounded-2xl ${isDarkMode ? 'bg-slate-700/40 border-slate-600' : 'bg-slate-50/70 border-slate-200'} border backdrop-blur-sm hover:shadow-xl transition-all duration-300`}>
-                                    <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-slate-200' : 'text-slate-700'}`}>
-                                        Post-graduation, I intend to scale our impact across multiple regions, creating a sustainable ecosystem that supports the next generation of leaders while addressing pressing social and economic challenges. This journey has taught me that <strong>true leadership</strong> is not about reaching a destination, but about continuously growing and empowering others to reach their full potential.
+                                        Most importantly, it clarified my purpose and reinforced my mission, giving me the confidence to move forward with impact. I am committed to carrying these lessons into my career, <strong>leading with empathy and vision</strong>, and continuing to create change in the communities I serve.
                                     </p>
                                 </div>
                             </div>
@@ -418,10 +396,10 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                                 <Target className={`w-7 h-7 ${isDarkMode ? 'text-white' : 'text-slate-700'}`} />
                             </div>
                             <blockquote className={`text-2xl italic font-medium max-w-3xl mx-auto leading-relaxed ${isDarkMode ? 'text-slate-200' : 'text-slate-700'} mb-4`}>
-                                "The greatest leader is not necessarily the one who does the greatest things. He is the one that gets people to do the greatest things."
+                                "Education is the most powerful weapon which you can use to change the world."
                             </blockquote>
                             <cite className={`block text-lg ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>
-                                — Ronald Reagan
+                                — Nelson Mandela
                             </cite>
                             
                             {/* Author signature */}
@@ -435,7 +413,7 @@ export const RenderEssay = ({ isDarkMode }: EssayProps) => {
                                             Niyotugendana Chancelline
                                         </p>
                                         <p className={`text-sm ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>
-                                            Leadership Development Student
+                                            Founder, Chance for All
                                         </p>
                                     </div>
                                 </div>

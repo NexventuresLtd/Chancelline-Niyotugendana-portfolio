@@ -25,3 +25,6 @@
 *{
   font-family: "Poppins", sans-serif;
 }
+html {
+  font-size: clamp(13px, 1.2vw, 16px);
+}

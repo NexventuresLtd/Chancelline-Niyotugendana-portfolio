@@ -22,6 +22,10 @@ const App = () => {
     }
   }, [isDarkMode]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [activeSection]);
+
 
   return (
     <div className={isDarkMode ? 'dark' : ''}>
