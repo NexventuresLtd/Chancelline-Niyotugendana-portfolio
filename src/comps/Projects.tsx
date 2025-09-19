@@ -37,7 +37,7 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
             title: "Logistics and Finance Intern – Rwanda Biomedical Center",
             type: "Professional Experience",
             description: "Supported logistics operations and procurement processes to strengthen efficiency in supply tracking.",
-            image: "/logos/chance2.png",
+            image: "/logos/chance15.jpeg",
             tags: ["Logistics", "Procurement", "Supply Chain", "Finance"],
             duration: "Jan 2025 – Mar 2025",
             location: "Kigali, Rwanda"
@@ -57,7 +57,7 @@ export const RenderPortfolio = ({ isDarkMode }: PortProps) => {
             title: "Volunteer – ALU Financial Aid Team",
             type: "Volunteer Experience",
             description: "Guided incoming students through services and resources to improve campus experience.",
-            image: "/logos/chance12.jpeg",
+            image: "/logos/chance14.jpeg",
             tags: ["Student Support", "Coordination", "Guidance", "Service"],
             duration: "Jan 2024 – Present",
             location: "African Leadership University"
