@@ -11,10 +11,10 @@ export default function SimpleGallery() {
         '/logos/chance5.jpeg',
         '/logos/chance6.jpeg',
         '/logos/chance7.jpeg',
-        '/logos/chance8.jpeg',
+        // '/logos/chance8.jpeg',
         '/logos/chance9.jpeg',
         '/logos/chance11.jpeg',
-        '/logos/chance12.jpeg',
+        // '/logos/chance12.jpeg',
         '/logos/chance13.jpeg',
     ];
 
